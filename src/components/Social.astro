@@ -1,0 +1,6 @@
+---
+const { platform, username, platform1, username1, platform2, username2 } = Astro.props;
+---
+<p>Learn more about me or my projects on <a href={`https://www.${platform}.com/${username}`}>{platform}</a> 
+    <a href={`https://www.${platform1}.com/${username1}`}>{platform1}</a>
+    <a href={`https://www.${platform2}.com/${username2}`}>{platform2}</a>!</p>
