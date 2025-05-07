@@ -1,7 +1,6 @@
 ---
 import '../styles/global.css';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "About Me";
 
 const identity = {
@@ -18,10 +17,10 @@ const hb1 = randomPair[0];
 const hb2 = randomPair[1];
 
 const happy = true;
-const finished = false;
+const finished = true;
 const goal = 3;
 
-const skillColor = "navy";
+const skillColor = "green";
 const fontWeight = "bold";
 const textCase = "uppercase";
 
@@ -48,9 +47,7 @@ const textCase = "uppercase";
         </style>
 	</head>
 	<body>
-        <Header />
-		<h1>About Me</h1>
-        <h1>{pageTitle}</h1>
+        <BaseLayout pageTitle={pageTitle}>
         <h2>This is Giga About ME</h2> 
         <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
 
@@ -73,9 +70,6 @@ const textCase = "uppercase";
         {finished && <p>I finished this tutorial!</p>}
 
         {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
-        <Footer />
-        <script>
-			import "../scripts/menu.js";
-		</script>
+        </BaseLayout>
 	</body>
 </html>
